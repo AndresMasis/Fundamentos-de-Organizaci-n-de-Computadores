@@ -1,3 +1,10 @@
+# Hecho por Andrés Masís Rojas
+# Carne 2020127158
+# Para el proyecto grupal
+# En caso de tener una duda, le ruego contactar al estudiante para aclarar
+# WhatsApp: 6071-7600
+# E-mail: andres-masis-rojas@outlook.com
+# Preferiblemente WhatsApp
 def pasar_IEEE(num):
     binario, exponente = decimal_a_binario(num)
 
