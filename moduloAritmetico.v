@@ -1,4 +1,4 @@
-module sumadorCompleto;
+module prueba;
     reg a31, a30, a29, a28, a27, a26, a25, a24, a23, a22, a21, a20, a19, a18, a17, a16, a15, a14, a13, a12, a11, a10, a9, a8, a7, a6, a5, a4, a3, a2, a1, a0, 
         b31, b30, b29, b28, b27, b26, b25, b24, b23, b22, b21, b20, b19, b18, b17, b16, b15, b14, b13, b12, b11, b10, b9, b8, b7, b6, b5, b4, b3, b2, b1, b0,
         w,x,y,z;
@@ -13,14 +13,12 @@ module sumadorCompleto;
     overflow);
     
     initial begin
-
 		$dumpfile("dump.out");
-		$dumpvars(0,sumadorCompleto);
-        #500
-		a31 = 1'b0; a30 = 1'b0; a29 = 1'b0; a28 = 1'b0; a27 = 1'b0; a26 = 1'b0; a25 = 1'b0; a24 = 1'b0; a23 = 1'b0; a22 = 1'b0; a21 = 1'b0; a20 = 1'b0; a19 = 1'b0; a18 = 1'b0; a17 = 1'b0; a16 = 1'b0; a15 = 1'b0; a14 = 1'b0; a13 = 1'b0; a12 = 1'b0; a11 = 1'b0; a10 = 1'b0; a9 = 1'b0; a8 = 1'b0; a7 = 1'b0; a6 = 1'b0; a5 = 1'b0; a4 = 1'b0; a3 = 1'b0; a2 = 1'b0; a1 = 1'b0; a0 = 1'b0;
-        b31 = 1'b0; b30 = 1'b0; b29 = 1'b0; b28 = 1'b0; b27 = 1'b0; b26 = 1'b0; b25 = 1'b0; b24 = 1'b0; b23 = 1'b0; b22 = 1'b0; b21 = 1'b0; b20 = 1'b0; b19 = 1'b0; b18 = 1'b0; b17 = 1'b0; b16 = 1'b0; b15 = 1'b0; b14 = 1'b0; b13 = 1'b0; b12 = 1'b0; b11 = 1'b0; b10 = 1'b0; b9 = 1'b0; b8 = 1'b0; b7 = 1'b0; b6 = 1'b0; b5 = 1'b0; b4 = 1'b0; b3 = 1'b0; b2 = 1'b0; b1 = 1'b0; b0 = 1'b0; 
+		$dumpvars(0,prueba);
+		a31 = 1'b0; a30 = 1'b0; a29 = 1'b0; a28 = 1'b0; a27 = 1'b0; a26 = 1'b0; a25 = 1'b0; a24 = 1'b0; a23 = 1'b0; a22 = 1'b0; a21 = 1'b0; a20 = 1'b0; a19 = 1'b0; a18 = 1'b0; a17 = 1'b0; a16 = 1'b0; a15 = 1'b0; a14 = 1'b0; a13 = 1'b0; a12 = 1'b0; a11 = 1'b0; a10 = 1'b0; a9 = 1'b0; a8 = 1'b0; a7 = 1'b0; a6 = 1'b0; a5 = 1'b0; a4 = 1'b0; a3 = 1'b1; a2 = 1'b1; a1 = 1'b0; a0 = 1'b0;
+        b31 = 1'b0; b30 = 1'b0; b29 = 1'b0; b28 = 1'b0; b27 = 1'b0; b26 = 1'b0; b25 = 1'b0; b24 = 1'b0; b23 = 1'b0; b22 = 1'b0; b21 = 1'b0; b20 = 1'b0; b19 = 1'b0; b18 = 1'b0; b17 = 1'b0; b16 = 1'b0; b15 = 1'b0; b14 = 1'b0; b13 = 1'b0; b12 = 1'b0; b11 = 1'b0; b10 = 1'b0; b9 = 1'b0; b8 = 1'b0; b7 = 1'b0; b6 = 1'b0; b5 = 1'b0; b4 = 1'b0; b3 = 1'b1; b2 = 1'b0; b1 = 1'b1; b0 = 1'b0; 
         w = 1'b0; x = 1'b1; y = 1'b1; z = 1'b0;
-        #1000
+        #500
 		$finish;
 	end
 
@@ -28,9 +26,103 @@ module sumadorCompleto;
 		$monitor("En %2t, Suma = %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b %b",
                  $time,
                 overflow,
-                r31, r30, r29, r28, r27, r26, r25, r24, r23, r22, r21, r20, r19, r18, r17, r16, r15, r14, r13, r12, r11, r10, r9, r8, r7, r6, r5, r4, r3, r2, r1, r0);
+                r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);        
+endmodule
+
+/*Testbench interprete
+module prueba;
+    reg x,y,z;
+
+    wire carryOut,seleccion;
+
+    interprete cg(w,x,y,z,carryOut,seleccion);
+
+    
+    initial begin
+
+		$dumpfile("dump.out");
+		$dumpvars(0,prueba);
+
+        x = 1'b1; y = 1'b1; z = 1'b1;
+
+
+        #50
+		$finish;
+	end
+
+    initial 
+		$monitor("En %2t, carryOut = %b,seleccion = %b",
+                 $time,
+                carryOut, seleccion);
+        
+endmodule*/
+
+/*
+Testbench interprete_seleccion
+module prueba;
+    reg x,y,z;
+
+    wire seleccion;
+
+    interprete_seleccion cg(x,y,z,seleccion);
+    
+    initial begin
+
+		$dumpfile("dump.out");
+		$dumpvars(0,prueba);
+
+        x = 1'b1; y = 1'b0; z = 1'b1;
+
+
+        #50
+		$finish;
+	end
+
+    initial 
+		$monitor("En %2t, seleccion = %b",
+                 $time,
+                seleccion);
+        
+endmodule*/
+
+/*
+Testbench interprete_carry
+module prueba;
+    reg x,y,z;
+
+    wire carryOut;
+
+    interprete_carry cg(x,y,z,carryOut);
+    
+    initial begin
+
+		$dumpfile("dump.out");
+		$dumpvars(0,prueba);
+
+        x = 1'b1; y = 1'b0; z = 1'b1;
+
+
+        #50
+		$finish;
+	end
+
+    initial 
+		$monitor("En %2t, seleccion = %b",
+                 $time,
+                carryOut);
         
 endmodule
+*/
+
+
+
+
+
+
+
+
+
+
 
 /*
 Este es un modulo es el componente aritmetico final
@@ -67,7 +159,7 @@ module componente_aritmetico(a31, a30, a29, a28, a27, a26, a25, a24, a23, a22, a
     // Se implementa el multiplexor, para saber si pasa el valor de B original o con los bits invertidos
     mux2_1 mux_cg(b31, b30, b29, b28, b27, b26, b25, b24, b23, b22, b21, b20, b19, b18, b17, b16, b15, b14, b13, b12, b11, b10, b9, b8, b7, b6, b5, b4, b3, b2, b1, b0,
         cable31, cable30, cable29, cable28, cable27, cable26, cable25, cable24, cable23, cable22, cable21, cable20, cable19, cable18, cable17, cable16, cable15, cable14, cable13, cable12, cable11, cable10, cable9, cable8, cable7, cable6, cable5, cable4, cable3, cable2, cable1, cable0,
-        seleccion,
+        cable_seleccion,
         cable63, cable62, cable61, cable60, cable59, cable58, cable57, cable56, cable55, cable54, cable53, cable52, cable51, cable50, cable49, cable48, cable47, cable46, cable45, cable44, cable43, cable42, cable41, cable40, cable39, cable38, cable37, cable36, cable35, cable34, cable33, cable32);
 
     // Se suma el valor de a, más lo que paso el multiplexor
@@ -92,7 +184,7 @@ module interprete(w,x,y,z,carryOut,seleccion);
 
     // Se implementan los modulos anteriores
     interprete_carry carry_cg(x,y,z,carryOut);
-    interprete_carry seleccion_cg(x,y,z,seleccion);
+    interprete_seleccion seleccion_cg(x,y,z,seleccion);
 
 endmodule
 
@@ -116,8 +208,8 @@ module interprete_seleccion(x,y,z,seleccion);
     and #(2) g2(cable0,cableNoty,x);
     and #(2) g3(cable1,cable0,z);
 
-    and #(2) g4(cable2,cableNotz,x);
-    and #(2) g5(cable3,cable2,y);
+    and #(2) g4(cable2,y,x);
+    and #(2) g5(cable3,cable2,cableNotz);
 
     or #(1) g6(seleccion,cable3,cable1);
 
@@ -152,7 +244,7 @@ Las salidas son los 32 bits del resultado el carry de salida
 module sumador_32bits(a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31,
                       b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18, b19, b20, b21, b22, b23, b24, b25, b26, b27, b28, b29, b30, b31,
                       carryIn,
-                      s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, a30, a31,
+                      s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25, s26, s27, s28, s29, s30, s31,
                       overflow);
 
     input a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31,
