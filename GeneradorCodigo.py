@@ -1,32 +1,29 @@
-"""
-# Generates a list of roman numerals
+# Uploads the list of roman numbers
+file = open('romanos.txt', 'r')
+listaRomanosFea = file.readlines()
+file.close()
+
 listaRomanos = []
-num = [1, 4, 5, 9, 10, 40, 50, 90,
-           100, 400, 500, 900, 1000]
-sym = ["I", "IV", "V", "IX", "X", "XL",
-       "L", "XC", "C", "CD", "D", "CM", "M"]
-for number in range(1,4000):
-    i = 12
-    roma = ""
-    while number:
-        div = number // num[i]
-        number %= num[i]
 
-        while div:
-            roma += sym[i]
-            div -= 1
-        i -= 1
-
-    listaRomanos.append(roma)
+for e in listaRomanosFea:
+    listaRomanos.append(e.strip())
 
 
+# Uploads the list of numbers in words
+file = open('palabras_numeros.txt', 'r')
+listaRomanosFea = file.readlines()
+file.close()
 
-#Creates the code of if, according to wich roman numeral is created, what number must return
-i = 1
+listaNumerosPal = []
+
+for e in listaRomanosFea:
+    listaNumerosPal.append(e.strip())
+
+
+#Creates the code of if, according to wich roman numeral is created, what number in words must return
+i = 0
 for roman in listaRomanos:
-    print("if entrada == '"+ roman+ "':")
-    print(" print(", i, ")")
+    print("if entrada == '" + roman + "':")
+    print(" print('" + listaNumerosPal[i] + "')")
     print("")
     i += 1
-"""
-
